@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "studio-7193477778-acbdc"
-  }
+    "default": "studio-7193477778-acbdc",
+    "prod": "studio-7193477778-acbdc"
+  },
+  "targets": {},
+  "etags": {}
 }
