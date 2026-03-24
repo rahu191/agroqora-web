@@ -15,3 +15,5 @@ env:
     secret: google_private_key
   - variable: SMTP_PASS
     secret: smtp_pass
+  - variable: Y
+    secret: smtp_pass
