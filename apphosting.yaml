@@ -2,6 +2,16 @@
 # https://firebase.google.com/docs/app-hosting/configure
 
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
   maxInstances: 1
+
+env:
+  - variable: GOOGLE_SHEET_ID
+    value: "1d_IIy_Jc2MjSpDSGHEmE5GERaUxrplP9x4ui25h8ZZ4"
+  - variable: GOOGLE_CLIENT_EMAIL
+    value: "agroqora-services@studio-7193477778-acbdc.iam.gserviceaccount.com"
+  - variable: SMTP_USER
+    value: "agroqora@gmail.com"
+  - variable: GOOGLE_PRIVATE_KEY
+    secret: google_private_key
+  - variable: SMTP_PASS
+    secret: smtp_pass
