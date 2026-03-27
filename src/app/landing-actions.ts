@@ -127,10 +127,8 @@ export async function sendLandingContactMessage(
 
       await transporter.sendMail({
         from: `"Aqroqora Team" <aqroqora@gmail.com>`,
-        to: "aqroqora@gmail.com",
-        cc: validatedFields.data.email,
+        to: validatedFields.data.email,
         bcc: ["rahul.patle@agroqora.com", "kiran.fegade@agroqora.com"],
-        replyTo: validatedFields.data.email,
         subject: "Thank you for getting in touch with Aqroqora!",
         html: htmlBody,
       });
