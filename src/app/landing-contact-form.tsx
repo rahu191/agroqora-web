@@ -61,9 +61,9 @@ export default function LandingContactForm() {
                 <SelectValue placeholder="Select..." />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="Tech Demo">Tech Demo</SelectItem>
                 <SelectItem value="Partnership">Partnership</SelectItem>
-                <SelectItem value="Support">Support</SelectItem>
+                <SelectItem value="Tech Demo">Tech Demo</SelectItem>
+                <SelectItem value="Media">Media</SelectItem>
                 <SelectItem value="Other">Other</SelectItem>
             </SelectContent>
         </Select>

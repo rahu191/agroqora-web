@@ -12,8 +12,16 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'AgroQora',
-  description: 'AI-powered insights for modern farming.',
+  title: 'AgroQora — AI-Powered Agritech Platform for Smarter, Sustainable Farming',
+  description: 'AgroQora is a digital-native Agritech SaaS platform scaling Indian agriculture with real-time IoT monitoring, AI crop diagnostics, and predictive intelligence. Built on Google Cloud.',
+  keywords: ['agritech', 'AI farming', 'IoT agriculture', 'crop diagnostics', 'smart farming', 'India', 'SaaS', 'precision agriculture'],
+  openGraph: {
+    title: 'AgroQora — Smarter Farming. Sustainable Future.',
+    description: 'Scaling Indian Agriculture with Real-time IoT Monitoring and AI-Driven Predictive Intelligence.',
+    type: 'website',
+    locale: 'en_IN',
+    siteName: 'AgroQora',
+  },
   icons: {
     icon: '/Agroqora_logo.png?v=1',
     shortcut: '/Agroqora_logo.png?v=1',

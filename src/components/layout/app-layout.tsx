@@ -11,6 +11,7 @@ import {
 import { Header } from '@/components/layout/header';
 import { Nav } from '@/components/layout/nav';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useSidebar } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
@@ -32,10 +33,10 @@ const AppSidebar = () => {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image src="/Agroqora_logo.png" alt="AgroQora Logo" width={32} height={32} />
           {state === 'expanded' && <span className="text-xl font-bold">AgroQora</span>}
-        </div>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <Nav />
