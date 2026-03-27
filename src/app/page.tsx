@@ -42,12 +42,17 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 text-center md:text-left relative z-10 pt-20 w-full">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/20 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+          {/* 🚀 Launching Soon Ticker - Highly Visible */}
+          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#2E7D32] to-[#4CAF50] text-white border-2 border-white/30 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 shadow-[0_0_30px_rgba(76,175,80,0.5)]">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </span>
-            <span className="text-sm font-bold uppercase tracking-widest">Empowering Modern Farming</span>
+            <span className="text-sm md:text-base font-black uppercase tracking-[0.2em] animate-pulse">🚀 Launching Soon — Get Early Access</span>
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+            </span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 text-white drop-shadow-xl leading-[1.1]">
@@ -184,7 +189,7 @@ export default function HomePage() {
             </div>
 
             <Button asChild size="lg" variant="secondary" className="h-14 px-8 text-lg font-bold">
-               <Link href="/about">Our Mission</Link>
+               <Link href="#contact">Get In Touch</Link>
             </Button>
           </div>
         </div>
