@@ -79,7 +79,7 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </span>
-            <span className="text-sm md:text-base font-black uppercase tracking-[0.2em] animate-pulse">🚀 Launching Soon — Get Early Access</span>
+            <span className="text-sm md:text-base font-black uppercase tracking-[0.2em] animate-pulse">Empowering Indian Agriculture with AI & IoT</span>
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
@@ -148,7 +148,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-2xl font-black mb-4 text-emerald-800 dark:text-emerald-300 uppercase tracking-tight">The Agroqora Solution</h3>
                 <p className="text-lg text-emerald-700/80 dark:text-emerald-300/70 leading-relaxed font-medium">
-                  We provide an end-to-end digital ecosystem. By fusing IoT sensor data with Google Cloud-powered ML models, we give farmers the &ldquo;foresight&rdquo; to act before problems occur.
+                  We provide an end-to-end digital ecosystem — a subscription-based SaaS platform that fuses IoT sensor data with Google Cloud-powered ML models, giving farmers the &ldquo;foresight&rdquo; to act before problems occur.
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
             {[
               {
                 title: "AI Crop Diagnostics",
-                description: "Advanced computer vision models that detect pests and nutrient deficiencies from simple smartphone photos. Get instant treatment plans powered by deep learning.",
+                description: "Built on TensorFlow and Vertex AI, our computer vision models detect pests and nutrient deficiencies from simple smartphone photos. Get instant treatment plans powered by deep learning.",
                 icon: Cpu,
                 gradient: "from-violet-500/10 to-blue-500/10",
                 iconBg: "bg-violet-100 dark:bg-violet-900/30",
@@ -186,7 +186,7 @@ export default function HomePage() {
               },
               {
                 title: "IoT Soil Intelligence",
-                description: "Plug-and-play sensors providing 24/7 telemetry on moisture, pH, and temperature. Real-time dashboards give you complete control over your soil health.",
+                description: "Plug-and-play sensors providing 24/7 IoT telemetry on moisture, pH, and temperature via Google Cloud IoT. Real-time dashboards give you complete control over your soil health.",
                 icon: Radio,
                 gradient: "from-emerald-500/10 to-teal-500/10",
                 iconBg: "bg-emerald-100 dark:bg-emerald-900/30",
@@ -194,7 +194,7 @@ export default function HomePage() {
               },
               {
                 title: "Yield Prediction Engine",
-                description: "Proprietary ML algorithms that analyze historical data, weather patterns, and market trends to optimize harvest timing and maximize profit.",
+                description: "Proprietary ML models trained on Vertex AI that analyze historical data, weather patterns, and market trends to optimize harvest timing and maximize profit.",
                 icon: TrendingUp,
                 gradient: "from-amber-500/10 to-orange-500/10",
                 iconBg: "bg-amber-100 dark:bg-amber-900/30",
@@ -266,7 +266,7 @@ export default function HomePage() {
                 <h3 className="text-2xl font-black text-foreground mb-1">Kiran Fegade</h3>
                 <p className="text-sm font-bold text-primary uppercase tracking-wider mb-6">Co-Founder & Solution Architecture Specialist</p>
                 <p className="text-muted-foreground leading-relaxed text-[1.05rem]">
-                  An expert in designing scalable, high-availability systems and strategic technical operations. Kiran ensures the platform&apos;s architecture is robust, secure, and ready for national scale.
+                  A seasoned IT professional with over 16 years of experience designing scalable, high-availability systems and strategic technical operations. Kiran ensures the platform&apos;s architecture is robust, secure, and ready for national scale.
                 </p>
                 <div className="flex items-center gap-4 mt-6 pt-6 border-t border-border/60">
                   <a href="mailto:kiran.fegade@agroqora.com" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors">
