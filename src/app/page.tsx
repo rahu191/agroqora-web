@@ -17,8 +17,8 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* STICKY NAVIGATION BAR                                         */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b overflow-x-hidden" role="banner">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between overflow-hidden">
+      <header className="fixed top-0 w-full z-[100] bg-background/80 backdrop-blur-md border-b" role="banner">
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <Image src="/Agroqora_logo.png" alt="AgroQora Logo" width={32} height={32} />
             <span className="text-xl font-bold tracking-tight text-primary">AgroQora</span>
@@ -37,13 +37,13 @@ export default function HomePage() {
 
           {/* Mobile Navigation */}
           <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Open menu" className="md:hidden cursor-pointer touch-manipulation relative z-[110]">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72 pt-12">
-              <nav className="flex flex-col gap-6" aria-label="Mobile Navigation">
+            <SheetContent side="right" className="w-[85vw] sm:w-72 pt-20 px-6 z-[200]">
+              <nav className="flex flex-col items-center gap-8" aria-label="Mobile Navigation">
                 <SheetClose asChild>
                   <Link href="#home" className="text-lg font-bold hover:text-primary transition-colors">Home</Link>
                 </SheetClose>
