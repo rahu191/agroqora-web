@@ -6,11 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, Send } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { cn } from "@/lib/utils";
 
 const initialState: LandingContactState = {
   formState: 'initial',
@@ -56,17 +54,20 @@ export default function LandingContactForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="inquiryType">Inquiry Type</Label>
-        <Select name="inquiryType" required disabled={state.formState === 'pending'}>
-            <SelectTrigger id="inquiryType">
-                <SelectValue placeholder="Select..." />
-            </SelectTrigger>
-            <SelectContent>
-                <SelectItem value="Partnership">Partnership</SelectItem>
-                <SelectItem value="Tech Demo">Tech Demo</SelectItem>
-                <SelectItem value="Media">Media</SelectItem>
-                <SelectItem value="Other">Other</SelectItem>
-            </SelectContent>
-        </Select>
+        <select
+          id="inquiryType"
+          name="inquiryType"
+          required
+          disabled={state.formState === 'pending'}
+          className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
+          defaultValue=""
+        >
+          <option value="" disabled>Select...</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Tech Demo">Tech Demo</option>
+          <option value="Media">Media</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
       <div className="space-y-2">
         <Label htmlFor="message">Your Message</Label>
