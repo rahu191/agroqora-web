@@ -12,7 +12,7 @@ import { Header } from '@/components/layout/header';
 import { Nav } from '@/components/layout/nav';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useSidebar } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { LogOut } from 'lucide-react';
@@ -24,11 +24,30 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useAuth } from '@/hooks/useAuth';
+import { Badge } from '@/components/ui/badge';
+
+const USER_TYPE_LABELS: Record<string, string> = {
+  farmer: '🌾 Farmer',
+  investor: '💼 Investor',
+  partner: '🤝 Partner',
+};
 
 const AppSidebar = () => {
   const { state } = useSidebar();
-  const userAvatar = PlaceHolderImages.find((img) => img.id === 'user-avatar');
+  const { user, userProfile, signOut } = useAuth();
+
+  // Derive display info from the profile or fall back to phone
+  const displayName = userProfile?.fullName || user?.phoneNumber || 'User';
+  const userTypeLabel = userProfile?.userType ? USER_TYPE_LABELS[userProfile.userType] : 'Free Plan';
+  const initials = userProfile?.fullName
+    ? userProfile.fullName
+        .split(' ')
+        .slice(0, 2)
+        .map((n) => n[0])
+        .join('')
+        .toUpperCase()
+    : 'AQ';
 
   return (
     <Sidebar>
@@ -47,13 +66,14 @@ const AppSidebar = () => {
             <Button variant="ghost" className="w-full justify-start p-2 h-auto">
               <div className="flex items-center gap-3 w-full">
                 <Avatar className="h-8 w-8">
-                  {userAvatar && <AvatarImage src={userAvatar.imageUrl} alt="User avatar" />}
-                  <AvatarFallback>FN</AvatarFallback>
+                  <AvatarFallback className="bg-primary/10 text-primary text-xs font-bold">
+                    {initials}
+                  </AvatarFallback>
                 </Avatar>
                 {state === 'expanded' && (
                   <div className="text-left overflow-hidden">
-                    <p className="text-sm font-medium truncate">F. Farmer</p>
-                    <p className="text-xs text-muted-foreground">Free Plan</p>
+                    <p className="text-sm font-medium truncate">{displayName}</p>
+                    <p className="text-xs text-muted-foreground">{userTypeLabel}</p>
                   </div>
                 )}
               </div>
@@ -66,7 +86,10 @@ const AppSidebar = () => {
             <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={signOut}
+              className="text-destructive focus:text-destructive cursor-pointer"
+            >
               <LogOut className="mr-2 h-4 w-4" />
               <span>Log out</span>
             </DropdownMenuItem>
