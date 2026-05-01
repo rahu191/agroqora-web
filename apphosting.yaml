@@ -17,3 +17,15 @@ env:
     secret: smtp_pass
   - variable: Y
     secret: smtp_pass
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: "AIzaSyD_Cs_AnWDqIM2N-DHQjkI31NyUs_pXUSc"
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: "studio-7193477778-acbdc.firebaseapp.com"
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: "studio-7193477778-acbdc"
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: "studio-7193477778-acbdc.firebasestorage.app"
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "833490367691"
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: "1:833490367691:web:ff69dc1fdc560a8d41d74e"
