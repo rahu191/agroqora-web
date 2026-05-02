@@ -14,7 +14,9 @@ import {
   Sprout,
   TrendingUp,
   BotMessageSquare,
+  Users,
 } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 
 export const navLinks = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutGrid },
@@ -27,6 +29,7 @@ export const navLinks = [
 
 export function Nav() {
   const pathname = usePathname();
+  const { userProfile } = useAuth();
 
   return (
     <SidebarMenu>
@@ -44,6 +47,22 @@ export function Nav() {
           </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
+      
+      {/* Partner specific links */}
+      {userProfile?.userType === 'partner' && (
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === '/users'}
+            tooltip="User Management"
+          >
+            <Link href="/users">
+              <Users />
+              <span>User Management</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      )}
     </SidebarMenu>
   );
 }

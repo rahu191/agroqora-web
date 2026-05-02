@@ -16,6 +16,7 @@ export type UserProfile = {
   userType: UserType;
   location: string;
   phoneNumber: string;
+  approvalStatus: 'pending' | 'approved' | 'rejected';
   createdAt: Timestamp;
   updatedAt: Timestamp;
 };
@@ -42,6 +43,7 @@ export async function createUserProfile(
     userType: UserType;
     location: string;
     phoneNumber: string;
+    approvalStatus: 'pending' | 'approved' | 'rejected';
   }
 ): Promise<void> {
   await setDoc(doc(db, 'users', uid), {
@@ -50,6 +52,7 @@ export async function createUserProfile(
     userType: data.userType,
     location: data.location,
     phoneNumber: data.phoneNumber,
+    approvalStatus: data.approvalStatus,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });

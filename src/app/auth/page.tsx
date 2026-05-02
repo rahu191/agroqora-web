@@ -8,8 +8,9 @@ import {
   getAdditionalUserInfo,
   type ConfirmationResult,
 } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
-import { getUserProfile } from '@/lib/userProfile';
+import { auth, db } from '@/lib/firebase';
+import { getUserProfile, createUserProfile } from '@/lib/userProfile';
+import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import { useAuth } from '@/hooks/useAuth';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -204,7 +205,34 @@ export default function AuthPage() {
       const isNewUser = additionalInfo?.isNewUser ?? false;
 
       if (isNewUser) {
-        // New user — send to profile completion
+        // Check if this phone number was invited as a Partner
+        if (result.user.phoneNumber) {
+          try {
+            const inviteRef = doc(db, 'partner_invites', result.user.phoneNumber);
+            const inviteSnap = await getDoc(inviteRef);
+            
+            if (inviteSnap.exists()) {
+              const inviteData = inviteSnap.data();
+              // Auto-register as partner
+              await createUserProfile(result.user.uid, {
+                fullName: inviteData.fullName || 'Partner',
+                userType: 'partner',
+                location: inviteData.location || '',
+                phoneNumber: result.user.phoneNumber,
+                approvalStatus: 'approved'
+              });
+              // Optionally delete the invite
+              await deleteDoc(inviteRef);
+              
+              router.push('/dashboard');
+              return;
+            }
+          } catch (err) {
+            console.error('Error checking partner invite:', err);
+          }
+        }
+        
+        // Regular new user — send to profile completion
         router.push('/complete-signup');
       } else {
         // Returning user — check if they have a profile in Firestore

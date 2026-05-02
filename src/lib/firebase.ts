@@ -19,6 +19,9 @@ const db = getFirestore(app);
 // Set persistence so the user stays logged in after page refresh
 if (typeof window !== 'undefined') {
   setPersistence(auth, browserLocalPersistence);
+  if (process.env.NODE_ENV === 'development') {
+    auth.settings.appVerificationDisabledForTesting = true;
+  }
 }
 
 export { app, auth, db };

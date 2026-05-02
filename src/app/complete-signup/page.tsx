@@ -13,7 +13,6 @@ import { Input } from '@/components/ui/input';
 const USER_TYPES: { value: UserType; label: string; icon: React.ElementType; description: string }[] = [
   { value: 'farmer', label: 'Farmer', icon: Sprout, description: 'I grow crops and manage farmland' },
   { value: 'investor', label: 'Investor', icon: Briefcase, description: 'I invest in agricultural ventures' },
-  { value: 'partner', label: 'Partner', icon: Handshake, description: 'I provide agri-tech services' },
 ];
 
 export default function CompleteSignupPage() {
@@ -71,6 +70,7 @@ export default function CompleteSignupPage() {
         userType: userType as UserType,
         location: location.trim(),
         phoneNumber: user.phoneNumber || '',
+        approvalStatus: userType === 'investor' ? 'pending' : 'approved',
       });
 
       // Refresh the profile in AuthContext so ProtectedRoute lets us through
