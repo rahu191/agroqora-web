@@ -63,6 +63,7 @@ export default function AuthPage() {
 
   // ─── State ──────────────────────────────────────────────────────
   const [step, setStep] = useState<'phone' | 'otp'>('phone');
+  const [isSignUp, setIsSignUp] = useState(false);
   const [countryCode, setCountryCode] = useState('+91');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState<string[]>(Array(OTP_LENGTH).fill(''));
@@ -306,7 +307,9 @@ export default function AuthPage() {
             <div className="h-16 w-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/10">
               <Image src="/Agroqora_logo.png" alt="AgroQora" width={40} height={40} />
             </div>
-            <h1 className="text-2xl font-black text-white tracking-tight">Welcome to AgroQora</h1>
+            <h1 className="text-2xl font-black text-white tracking-tight">
+              {isSignUp ? 'Create an Account' : 'Welcome to AgroQora'}
+            </h1>
             <p className="text-sm text-white/50 mt-1">
               {step === 'phone'
                 ? 'Enter your phone number to get started'
@@ -391,6 +394,20 @@ export default function AuthPage() {
                   Privacy Policy
                 </Link>
               </p>
+
+              <div className="pt-4 border-t border-white/10 text-center text-sm text-white/50">
+                {isSignUp ? "Already have an account? " : "Don't have an account? "}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSignUp(!isSignUp);
+                    setError('');
+                  }}
+                  className="text-emerald-400 font-medium hover:text-emerald-300 transition-colors underline underline-offset-2"
+                >
+                  {isSignUp ? "Sign In" : "Sign Up"}
+                </button>
+              </div>
             </form>
           )}
 

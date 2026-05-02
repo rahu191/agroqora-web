@@ -31,7 +31,7 @@ export default function HomePage() {
             <Link href="#team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
             <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact Us</Link>
             <Button asChild size="sm">
-              <Link href="/auth">Enter Dashboard</Link>
+              <Link href="/auth">Sign In</Link>
             </Button>
           </nav>
 
@@ -58,7 +58,7 @@ export default function HomePage() {
                 </SheetClose>
                 <SheetClose asChild>
                   <Button asChild size="lg" className="mt-4">
-                    <Link href="/auth">Enter Dashboard</Link>
+                    <Link href="/auth">Sign In</Link>
                   </Button>
                 </SheetClose>
               </nav>
@@ -107,12 +107,6 @@ export default function HomePage() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 mb-12">
-            <Button asChild size="lg" className="h-16 px-10 text-xl font-bold shadow-2xl group bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/auth" className="flex items-center gap-3">
-                Launch Platform
-                <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
             <Button asChild size="lg" className="h-16 px-10 text-xl font-bold shadow-2xl group bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="#contact" className="flex items-center gap-3">
                 Request Demo
